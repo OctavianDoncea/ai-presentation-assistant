@@ -5,7 +5,7 @@ from schemas import PresentationCreate
 def get_presentation(db: Session, presentation_id: int):
     return db.query(Presentation).filter(Presentation.id == presentation_id).first()
 
-def get_presentations(db: Session, skip: int = 0, limit: int = 100):
+def get_multiple_presentations(db: Session, skip: int = 0, limit: int = 100):
     return db.query(Presentation).offset(skip).limit(limit).all()
 
 def create_presentation(db: Session, presentation: PresentationCreate):

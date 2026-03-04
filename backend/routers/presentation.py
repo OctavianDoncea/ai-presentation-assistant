@@ -37,8 +37,8 @@ def create_presentation(presentation: schemas.PresentationCreate, db: Session = 
     return crud.create_presentation(db=db, presentation=presentation)
 
 @router.get('/', response_model=List[schemas.PresentationOut])
-def read_presentations(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    return crud.get_presentations(db, skip=skip, limit=limit)
+def read_multiple_presentations(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    return crud.get_multiple_presentations(db, skip=skip, limit=limit)
 
 @router.get('/{presentation_id}', response_model=schemas.PresentationOut)
 def read_presentation(presentation_id: int, db: Session = Depends(get_db)):
