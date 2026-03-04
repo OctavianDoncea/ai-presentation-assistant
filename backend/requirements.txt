@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+sqlalchemy
+pymysql
+python-dotenv
+alembic
+httpx
+python-multipart
+PyPDF2
+python-docx
+pandas
